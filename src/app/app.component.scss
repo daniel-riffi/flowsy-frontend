@@ -1,0 +1,35 @@
+.headline {
+    display: flex;
+    margin-left: 0px 25px;
+    width: 100%;
+    height: 125px;
+    background-color: #3C3C3C;
+    border-radius: 0px 0px 20px 20px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.50);
+}
+
+.logo img {
+    height: 75px;
+}
+
+.logo {
+    align-self: center;
+    margin-right: 35px;
+    margin-left: 100px
+}
+
+.page-title {
+    align-self: center;
+}
+
+.title {
+    font-size: 32px;
+    color: #ffffff;
+    font-weight: bold;
+    margin-bottom: 3px;
+}
+
+.desc {
+    color: #bbbbbb;
+    font-weight: lighter;
+}

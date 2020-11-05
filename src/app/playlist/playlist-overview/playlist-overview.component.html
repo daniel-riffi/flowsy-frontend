@@ -1,0 +1,30 @@
+<div class="container">
+    <div class="search">
+      <input #search type="text" placeholder="Search for a playlist..." (keydown)="onKeyDown($event.key, search.value)">
+      <button (click)="searchClicked(search.value)">Suchen</button>
+    </div>
+    <table class="content-table">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Playlist</th>
+          <th># Tracks</th>
+          <th># Artists</th>
+          <th># Albums</th>
+          <th>Followers</th>
+          <th>Duration</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let playlist of playlists" (click)="playlistClicked(playlist.pid)">
+            <td>{{playlist.pid}}</td>
+            <td>{{playlist.name}}</td>
+            <td>{{playlist.num_tracks}}</td>
+            <td>{{playlist.num_artists}}</td>
+            <td>{{playlist.num_albums}}</td>
+            <td>{{playlist.num_followers}}</td>
+            <td>{{playlist.duration_ms | date:'HH:mm:ss'}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>

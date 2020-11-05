@@ -1,0 +1,43 @@
+.container {
+    max-width: 100%;
+    padding: 25px;
+    flex-direction: column;
+}
+
+.top {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+    align-items: center;
+}
+
+.top button {
+    background-color: #00ABD7;
+    color: #ffffff;
+    border-radius: 20px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.30);
+    border: none;
+    width: 200px;
+    height: 44px;
+}
+
+.top p {
+    font-size: 32px;
+    margin-left: 25px;
+    margin-bottom: 0px;
+    font-weight: lighter;
+    color: #3C3C3C;
+}
+
+.top p span {
+    font-weight: bold;
+}
+
+.tables {
+    display: flex;
+    justify-content: space-between;
+}
+
+.tables table {
+    width: 49%;
+}

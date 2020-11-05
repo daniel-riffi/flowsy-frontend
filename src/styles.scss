@@ -1,1 +1,44 @@
 /* You can add global styles to this file, and also import other style files */
+
+* {
+    font-family: sans-serif; /* Change your font family */
+  }
+
+  .content-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.9em;
+    border-radius: 30px;
+    overflow: hidden;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.30);
+  }
+  
+  .content-table thead tr {
+    background-color: #3C3C3C;
+    color: #ffffff;
+    text-align: left;
+    font-weight: bold;
+  }
+  
+  .content-table th,
+  .content-table td {
+    padding: 12px 32px;
+  }
+
+  .content-table th:last-child,
+  .content-table td:last-child {
+      text-align: end;
+  }
+  
+  .content-table tbody tr {
+    color: #BEBCBC;
+    font-weight: lighter;
+  }
+  
+  .content-table tbody tr:nth-of-type(even) {
+    background-color:#555454;
+  }
+
+  .content-table tbody tr:nth-of-type(odd) {
+    background-color: #615F5F;
+  }

@@ -1,0 +1,44 @@
+<div class="container">
+    <div class="top">
+        <p>Tracks of <span>{{playlist.name}}</span></p>
+        <button (click)="getRecommendation()">Recommendations</button>
+    </div>
+    <div class="tables">
+        <table class="content-table">
+            <thead>
+              <tr>
+                <th>#</th>
+                <th>Track</th>
+                <th>Artist</th>
+                <th>Duration</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let track of tracks">
+                <td>{{track.pos+1}}</td>
+                <td>{{track.track_name}}</td>
+                <td>{{track.artist_name}}</td>
+                <td>{{track.duration_ms | date:'mm:ss'}}</td>
+              </tr>
+            </tbody>
+          </table>
+          <table class="content-table">
+            <thead>
+                <tr>
+                  <th>#</th>
+                  <th>Track</th>
+                  <th>Artist</th>
+                  <th>Duration</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let track of recTracks; let i = index">
+                  <td>{{i+1}}</td>
+                  <td>{{track.track_name}}</td>
+                  <td>{{track.artist_name}}</td>
+                  <td>{{track.duration_ms | date:'mm:ss'}}</td>
+                </tr>
+              </tbody>
+          </table>
+    </div>
+</div>
