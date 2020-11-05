@@ -31,10 +31,13 @@ export class RecommendationComponent implements OnInit {
     })
   }
 
-  getRecommendation(): void {
-    this.playlistService.getRecommendation(this.playlist.pid)
+  getRecommendation(num): void {
+    let n = Math.abs(Number(num));
+    if(!isNaN(n)){
+      this.playlistService.getRecommendation(this.playlist.pid, n)
       .subscribe(x => {
         this.recTracks = x;
       })
+    }
   }
 }

@@ -9,7 +9,5 @@ import { Title } from '@angular/platform-browser';
 })
 export class AppComponent{
 
-  constructor(private titleService: Title){
-    titleService.setTitle('Flowsy');
-  }
+  constructor(){}
 }

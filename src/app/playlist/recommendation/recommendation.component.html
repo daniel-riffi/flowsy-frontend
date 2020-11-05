@@ -1,7 +1,10 @@
 <div class="container">
     <div class="top">
         <p>Tracks of <span>{{playlist.name}}</span></p>
-        <button (click)="getRecommendation()">Recommendations</button>
+        <div class="right">
+          <input #numPlaylists type="text" value="50">
+          <button (click)="getRecommendation(numPlaylists.value)">Recommendations</button>
+        </div>
     </div>
     <div class="tables">
         <table class="content-table">
