@@ -14,8 +14,8 @@
   }
   
   .content-table thead tr {
-    background-color: #3C3C3C;
-    color: #ffffff;
+    background-color:#282828;
+    color: #c7c7c7;
     text-align: left;
     font-weight: bold;
   }
@@ -36,9 +36,9 @@
   }
   
   .content-table tbody tr:nth-of-type(even) {
-    background-color:#555454;
+    background-color:#383838;
   }
 
   .content-table tbody tr:nth-of-type(odd) {
-    background-color: #615F5F;
+    background-color: #323232;
   }
