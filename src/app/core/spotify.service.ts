@@ -1,17 +1,23 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, Subject } from 'rxjs';
-import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class SpotifyService {
 
-  constructor(private http: HttpClient) { }
+  token: string;
+
+  constructor(private http: HttpClient) {
+    this.http.get<string>('http://10.0.0.3:5000/token')
+      .subscribe(x => {
+        this.token = x;
+      })
+  }
 
   get headers() {
-    return new HttpHeaders({'Content-Type': 'application/json', 'Authorization': `Bearer ${environment.spotifyToken}`});
+    return new HttpHeaders({'Content-Type': 'application/json', 'Authorization': `Bearer ${this.token}`});
   }
 
   getTrack(trackUri: string) {

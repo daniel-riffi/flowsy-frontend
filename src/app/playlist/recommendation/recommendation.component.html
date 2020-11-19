@@ -2,6 +2,10 @@
     <div class="top">
         <p>Tracks of <span>{{playlist.name}}</span></p>
         <div class="right">
+          <select>
+            <option>old</option>
+            <option>new</option>
+          </select>
           <input #numPlaylists type="text" value="50">
           <button (click)="getRecommendation(numPlaylists.value)">Recommendations</button>
         </div>

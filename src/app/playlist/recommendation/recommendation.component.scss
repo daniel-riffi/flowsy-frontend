@@ -55,3 +55,17 @@
     align-self: center;
     text-align: center;
 }
+
+.right select {
+    background-color:#282828;
+    border-radius: 30px;
+    color: #ffffff;
+    border: none;
+    padding: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.30);
+    margin-right: 15px;
+    width: 150px;
+    appearance: none;
+    text-indent: 7px;
+}
+
