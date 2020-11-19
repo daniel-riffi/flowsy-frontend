@@ -39,7 +39,7 @@ body {
     font-weight: lighter;
   }
   
-  .content-table tbody tr:nth-of-type(even) {
+  .content-table tbody:nth-of-type(even) tr {
     background-color:#383838;
   }
 
@@ -47,7 +47,7 @@ body {
     background-color: #4b4b4b;
   }
 
-  .content-table tbody tr:nth-of-type(odd) {
+  .content-table tbody:nth-of-type(odd) tr {
     background-color: #323232;
   }
 

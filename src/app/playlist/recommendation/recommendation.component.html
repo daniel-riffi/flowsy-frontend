@@ -14,15 +14,13 @@
                 <th>Track</th>
                 <th>Artist</th>
                 <th>Duration</th>
+                <th></th>
               </tr>
             </thead>
-            <tbody>
-              <tr *ngFor="let track of tracks">
-                <td>{{track.pos+1}}</td>
-                <td>{{track.track_name}}</td>
-                <td>{{track.artist_name}}</td>
-                <td>{{track.duration_ms | date:'mm:ss'}}</td>
-              </tr>
+            <tbody *ngFor="let track of tracks"
+                    track-row
+                    [track]="track"
+                    [pos]="track.pos+1">
             </tbody>
           </table>
           <table class="content-table">
@@ -32,16 +30,14 @@
                   <th>Track</th>
                   <th>Artist</th>
                   <th>Duration</th>
+                  <th></th>
                 </tr>
               </thead>
-              <tbody>
-                <tr *ngFor="let track of recTracks; let i = index">
-                  <td>{{i+1}}</td>
-                  <td>{{track.track_name}}</td>
-                  <td>{{track.artist_name}}</td>
-                  <td>{{track.duration_ms | date:'mm:ss'}}</td>
-                </tr>
-              </tbody>
+              <tbody *ngFor="let track of recTracks; let i = index"
+                    track-row
+                    [track]="track"
+                    [pos]="i+1">
+            </tbody>
           </table>
     </div>
 </div>

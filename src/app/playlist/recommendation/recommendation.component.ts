@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { PlayService } from 'src/app/core/play.service';
 import { PlaylistService } from 'src/app/core/playlist.service';
+import { SpotifyService } from 'src/app/core/spotify.service';
 import { Playlist } from 'src/app/models/playlist';
 import { Track } from 'src/app/models/track';
 
@@ -15,7 +17,7 @@ export class RecommendationComponent implements OnInit {
   tracks: Track[] = [];
   recTracks: Track[] = [];
 
-  constructor(private playlistService: PlaylistService, private activatedRoute: ActivatedRoute) { }
+  constructor(private playlistService: PlaylistService, private spotifyService: SpotifyService, private player: PlayService, private activatedRoute: ActivatedRoute) { }
 
   ngOnInit(): void {
     this.activatedRoute.paramMap.subscribe(x => {
