@@ -43,6 +43,14 @@ body {
     background-color:#383838;
   }
 
+  .content-table tbody tr:nth-of-type(even):hover {
+    background-color: #4b4b4b;
+  }
+
   .content-table tbody tr:nth-of-type(odd) {
     background-color: #323232;
+  }
+
+  .content-table tbody tr:nth-of-type(odd):hover{
+    background-color: #4b4b4b;
   }
