@@ -17,7 +17,7 @@ export class RecommendationComponent implements OnInit {
   tracks: Track[] = [];
   recTracks: Track[] = [];
 
-  constructor(private playlistService: PlaylistService, private spotifyService: SpotifyService, private player: PlayService, private activatedRoute: ActivatedRoute) { }
+  constructor(private playlistService: PlaylistService, private activatedRoute: ActivatedRoute) { }
 
   ngOnInit(): void {
     this.activatedRoute.paramMap.subscribe(x => {

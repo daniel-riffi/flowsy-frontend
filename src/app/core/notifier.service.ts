@@ -1,20 +1,21 @@
 import { Injectable } from '@angular/core';
 import { Observable, Subject } from 'rxjs';
+import { PlayTrack } from '../models/play-track';
 
 @Injectable({
   providedIn: 'root'
 })
 export class NotifierService {
 
-  private stringRepository = new Subject<string>()
+  private playTrackRepo = new Subject<PlayTrack>()
 
   constructor() { }
 
-  public notify(msg: string): void {
-    this.stringRepository.next(msg);
+  public notify(msg: PlayTrack): void {
+    this.playTrackRepo.next(msg);
   }
 
-  public listen(): Observable<string> {
-    return this.stringRepository.asObservable();
+  public listen(): Observable<PlayTrack> {
+    return this.playTrackRepo.asObservable();
   }
 }

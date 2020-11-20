@@ -1,7 +1,9 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 import { NotifierService } from 'src/app/core/notifier.service';
 import { PlayService } from 'src/app/core/play.service';
 import { SpotifyService } from 'src/app/core/spotify.service';
+import { PlayTrack } from 'src/app/models/play-track';
 
 @Component({
   selector: 'play-button',
@@ -19,7 +21,7 @@ export class PlayButtonComponent implements OnInit {
   ngOnInit(): void {
     this.notifier.listen()
       .subscribe(x => {
-        if(this.trackUri != x){
+        if(this.trackUri != x.trackUri){
           this.icon = '../../../assets/play.png';
         }
       })
@@ -29,20 +31,26 @@ export class PlayButtonComponent implements OnInit {
     this.spotifyService.getTrack(this.trackUri.split(':')[2])
       .subscribe(x => {
         let previewUrl = x['preview_url'];
+        let trackName = x['name'];
+        let image = x['album']['images'][2]['url'];
         if(previewUrl != null){
           if(this.player.trackUri == this.trackUri && this.player.playerStatus == 'playing'){
             this.player.pause();
             this.icon = '../../../assets/play.png';
-            this.notifier.notify('PAUSED');
+            let playtrack = new PlayTrack(this.trackUri, trackName, image, 'Paused')
+            this.notifier.notify(playtrack);
           }
           else {
             this.player.play(this.trackUri);
             this.icon = '../../../assets/pause.png';
-            this.notifier.notify(this.trackUri);
+            let playtrack = new PlayTrack(this.trackUri, trackName, image, 'Now playing')
+            this.notifier.notify(playtrack);
           }
         }
         else {
-          console.log('No preview available')
+          this.player.pause();
+          let playtrack = new PlayTrack(this.trackUri, trackName, image, 'No preview available')
+          this.notifier.notify(playtrack)
         }
       })
   }

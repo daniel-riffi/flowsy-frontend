@@ -10,6 +10,8 @@ export class PlayService {
   playerStatus: string;
   trackUri: string;
 
+  onDisplay: boolean;
+
   constructor(private spotifyService: SpotifyService) { }
 
   play(trackUri: string): void {

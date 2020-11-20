@@ -20,7 +20,10 @@ export class TrackRowComponent implements OnInit {
   ngOnInit(): void {
     this.notifier.listen()
       .subscribe(x => {
-        this.playing = x == this.track.track_uri ? 'playing' : '';
+        this.playing = '';
+        if(x.status != 'No preview available'){
+          this.playing = x.trackUri == this.track.track_uri ? 'playing' : '';
+        }
       })
   }
 }
