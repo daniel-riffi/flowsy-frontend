@@ -15,6 +15,11 @@
     background-color:#282828;
     border-radius: 0px 0px 20px 20px;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.50);
+    position: fixed;
+}
+
+.body {
+    margin-top: 130px;
 }
 
 .logo img {
@@ -58,5 +63,40 @@ footer p {
     margin-bottom: 0;
     text-align: center;
     color: #c7c7c7;
+    align-self: center;
+}
+
+img {
+    border-radius: 10px;
+}
+  
+.playboard {
+    margin-left: auto;
+    align-self: center;
+    margin-right: 32px;
+    display: flex;
+    flex-direction: row;
+}
+
+.playboard .info .track {
+    color: #bbbbbb;
+    margin-bottom: 4px;
+}
+
+.playboard .info .status {
+    color: #ffffff;
+    font-size: 16px;
+    margin-bottom: 4px;
+}
+
+.playboard img {
+    width: 70px;
+    height: 70px;
+}
+
+.playboard .info {
+    display: flex;
+    flex-direction: column;
+    margin-right: 32px;
     align-self: center;
 }

@@ -7,8 +7,17 @@
       <p class="title">flowsy</p>
       <p class="desc">a simple way to get recommendations</p>
     </div>
+    <div class="playboard">
+      <div class="info">
+        <p class="status">{{status}}</p>
+        <p class="track">{{trackName}}</p>
+      </div>  
+      <img [src]="image" *ngIf="image != ''">
+    </div>
   </div>
-  <router-outlet></router-outlet>
+  <div class="body">
+    <router-outlet></router-outlet>
+  </div>
   <footer>
     <p>©daniel.riffert</p>
   </footer>

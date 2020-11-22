@@ -1,0 +1,8 @@
+<tr>
+    <td><p [class]="playing">{{pos}}</p></td>
+    <td><p [class]="playing">{{track.track_name}}</p></td>
+    <td><p [class]="playing">{{track.artist_name}}</p></td>
+    <td><p [class]="playing">{{track.duration_ms | date:'mm:ss'}}</p></td>
+    <td><play-button [track-uri]="track.track_uri"></play-button></td>
+</tr>
+
