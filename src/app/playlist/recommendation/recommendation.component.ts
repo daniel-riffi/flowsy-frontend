@@ -17,6 +17,8 @@ export class RecommendationComponent implements OnInit {
   tracks: Track[] = [];
   recTracks: Track[] = [];
 
+  selectedVersion: string = "v1";
+
   constructor(private playlistService: PlaylistService, private activatedRoute: ActivatedRoute) { }
 
   ngOnInit(): void {
@@ -36,7 +38,7 @@ export class RecommendationComponent implements OnInit {
   getRecommendation(num): void {
     let n = Math.abs(Number(num));
     if(!isNaN(n)){
-      this.playlistService.getRecommendation(this.playlist.pid, n)
+      this.playlistService.getRecommendation(this.playlist.pid, n, this.selectedVersion)
       .subscribe(x => {
         this.recTracks = x;
       })

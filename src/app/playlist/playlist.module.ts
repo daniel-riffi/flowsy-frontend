@@ -13,7 +13,8 @@ import { SharedModule } from '../shared/shared.module';
   imports: [
     CommonModule,
     PlaylistRoutingModule,
-    SharedModule
+    SharedModule,
+    FormsModule
   ],
   exports: [PlaylistOverviewComponent]
 })

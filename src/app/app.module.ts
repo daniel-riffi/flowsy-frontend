@@ -17,7 +17,7 @@ import { PlaylistModule } from './playlist/playlist.module';
     PlaylistRoutingModule,
     AppRoutingModule,
     CoreModule,
-    FormsModule
+    FormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

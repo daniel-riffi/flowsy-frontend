@@ -25,7 +25,7 @@ export class PlaylistService {
     return this.http.get<Track[]>(`${this.urlBase}/tracks/${pid}`)
   }
 
-  getRecommendation(pid, n): Observable<Track[]> {
-    return this.http.get<Track[]>(`${this.urlBase}/recommendation/${pid}?n=${n}`);
+  getRecommendation(pid, n, version): Observable<Track[]> {
+    return this.http.get<Track[]>(`${this.urlBase}/recommendation${version}/${pid}?n=${n}`);
   }
 }
