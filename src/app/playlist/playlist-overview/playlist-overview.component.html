@@ -1,7 +1,7 @@
 <div class="container">
     <div class="search">
-      <input #search type="text" placeholder="Search for a playlist..." (keydown)="onKeyDown($event.key, search.value)">
-      <button (click)="searchClicked(search.value)">Suchen</button>
+      <input #s type="text" placeholder="Search for a playlist..." (keydown)="onKeyDown($event.key, s.value)" [ngModel]="search">
+      <button (click)="searchClicked(s.value)">Suchen</button>
     </div>
     <table class="content-table">
       <thead>

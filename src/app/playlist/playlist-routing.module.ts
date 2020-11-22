@@ -4,7 +4,8 @@ import { PlaylistOverviewComponent } from './playlist-overview/playlist-overview
 import { RecommendationComponent } from './recommendation/recommendation.component';
 
 const routes: Routes = [
-  { path: '', component: PlaylistOverviewComponent },
+  { path: '', redirectTo: 'home', pathMatch: 'full' },
+  { path: 'home', component: PlaylistOverviewComponent },
   { path: 'playlist/:id', component: RecommendationComponent }
 ];
 
