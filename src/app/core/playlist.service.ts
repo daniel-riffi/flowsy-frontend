@@ -9,7 +9,7 @@ import { Track } from '../models/track';
 })
 export class PlaylistService {
 
-  urlBase: string = 'http://10.0.0.3:5000';
+  urlBase: string = 'http://10.0.0.6:5000';
 
   constructor(private http: HttpClient) { }
 

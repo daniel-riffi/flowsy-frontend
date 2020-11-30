@@ -10,7 +10,7 @@ export class SpotifyService {
   token: string;
 
   constructor(private http: HttpClient) {
-    this.http.get<string>('http://10.0.0.3:5000/token')
+    this.http.get<string>('http://10.0.0.6:5000/token')
       .subscribe(x => {
         this.token = x;
       })
