@@ -25,7 +25,14 @@ export class PlaylistService {
     return this.http.get<Track[]>(`${this.urlBase}/tracks/${pid}`)
   }
 
-  getRecommendation(pid, n, version): Observable<Track[]> {
-    return this.http.get<Track[]>(`${this.urlBase}/recommendation${version}/${pid}?n=${n}`);
+  getRecommendation(pid, n, algorithm): Observable<Track[]> {
+    switch(algorithm){
+      case 1:
+        return this.http.get<Track[]>(`${this.urlBase}/recommendationsOfFlowsy/${pid}?n=${n}`);
+      case 2: 
+        return this.http.get<Track[]>(`${this.urlBase}/recommendationsOfFlowsyv1/${pid}?n=${n}`);
+      case 3:
+        return this.http.get<Track[]>(`${this.urlBase}/recommendationsOfJu/${pid}?n=${n}`);
+    }
   }
 }

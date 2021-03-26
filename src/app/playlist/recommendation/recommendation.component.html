@@ -2,9 +2,8 @@
     <div class="top">
         <p>Tracks of <span>{{playlist.name}}</span></p>
         <div class="right">
-          <select [(ngModel)]="selectedVersion">
-            <option value="v1">version 1</option>
-            <option value="v2">version 2</option>
+          <select [(ngModel)]="selectedAlgorithm">
+            <option *ngFor="let algorithm of algorithms" [value]="algorithm.id">{{algorithm.name}}</option>
           </select>
           <input #numPlaylists type="text" value="50">
           <button (click)="getRecommendation(numPlaylists.value)">Recommendations</button>

@@ -5,6 +5,7 @@ import { PlaylistService } from 'src/app/core/playlist.service';
 import { SpotifyService } from 'src/app/core/spotify.service';
 import { Playlist } from 'src/app/models/playlist';
 import { Track } from 'src/app/models/track';
+import { Algorithm } from 'src/app/models/algorithm';
 
 @Component({
   selector: 'app-recommendation',
@@ -17,7 +18,13 @@ export class RecommendationComponent implements OnInit {
   tracks: Track[] = [];
   recTracks: Track[] = [];
 
-  selectedVersion: string = "v1";
+  algorithms: Algorithm[] = [
+    new Algorithm(1, 'flowsy'),
+    new Algorithm(2, 'flowsy old'),
+    new Algorithm(3, 'ju')
+  ]
+
+  selectedAlgorithm: number = 1;
 
   constructor(private playlistService: PlaylistService, private activatedRoute: ActivatedRoute) { }
 
@@ -29,19 +36,19 @@ export class RecommendationComponent implements OnInit {
           this.playlist = x;
         });
       this.playlistService.getTracksOfPlaylist(pid)
-      .subscribe(x => {
-        this.tracks = x;
-      })
+        .subscribe(x => {
+          this.tracks = x;
+        })
     })
   }
 
   getRecommendation(num): void {
     let n = Math.abs(Number(num));
-    if(!isNaN(n)){
-      this.playlistService.getRecommendation(this.playlist.pid, n, this.selectedVersion)
-      .subscribe(x => {
-        this.recTracks = x;
-      })
+    if (!isNaN(n)) {
+      this.playlistService.getRecommendation(this.playlist.pid, n, Number(this.selectedAlgorithm))
+        .subscribe(x => {
+          this.recTracks = x;
+        })
     }
   }
 }
